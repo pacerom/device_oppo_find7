@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# inherit from the proprietary version
+-include vendor/oppo/find7/BoardConfigVendor.mk
+
 # Inherit from MSM8974 common
 -include device/oppo/msm8974-common/BoardConfigCommon.mk
 
@@ -37,8 +40,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1073741824
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 13747929088 # 13747945472 - 16384 for crypto footer
 #BOARD_USERDATAIMAGE_PARTITION_SIZE := 3221225472
 
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_find7
+TARGET_HAS_VARIANT := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/oppo/find7/rootdir/etc/fstab.qcom
